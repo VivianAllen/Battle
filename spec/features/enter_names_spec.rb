@@ -5,6 +5,6 @@ feature 'Enter names' do
     fill_in :player_2_name, with: 'Steve'
     click_button 'Submit'
     expect(page).to have_content 'Dave the Bin vs. Steve the Skip, '\
-    'FIIIIIIIGHHTTTT!!!'
+    'FIIIIIIIGHT!!!'
   end
 end
