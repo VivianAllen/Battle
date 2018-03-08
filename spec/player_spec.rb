@@ -19,7 +19,7 @@ describe Player do
 
   context 'when attacked' do
     it 'reduces hp by 10' do
-      expect{ player_1.attack(player_2) }.to change{ player_2.hp }.from(100).to(90)
+      expect{ player_1.receive_damage }.to change{ player_1.hp }.from(100).to(90)
     end
   end
 
