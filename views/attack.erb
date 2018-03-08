@@ -1,5 +1,5 @@
 <h1>A BIN WILL FIGHT A SKIP!</h1>
-<h2> <%= @game.player_1.name %> the Bin ATTACKS <%= @game.player_2.name %>  the Skip</h2>
+<h2> <%= @game.whos_turn %> ATTACKS</h2>
 <p> <%= @game.player_1.name %> the Bin HP: <%= @game.player_1.hp %>
 <%= @game.player_2.name %> the Skip HP: <%= @game.player_2.hp %> </p>
 <form action='/attack' method='get'>

@@ -5,13 +5,20 @@ describe Player do
   subject(:player_1) { described_class.new('Dave')}
   subject(:player_2) { described_class.new('Steve')}
 
-  describe 'name' do
+  describe '#name' do
     it 'returns the players name' do
       expect(player_1.name).to eq 'Dave'
     end
   end
 
-  describe 'hp' do
+  describe '#change_suffix' do
+    it 'changes the players suffix' do
+      expect{ player_1.change_suffix('the Bin') }.to change{ player_1.suffix }\
+      .from(nil).to('the Bin')
+    end
+  end
+
+  describe '#hp' do
     it 'returns the players hp' do
       expect(player_1.hp).to eq 100
     end
