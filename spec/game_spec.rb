@@ -9,11 +9,11 @@ describe Game do
 
   context 'starting a game' do
     it 'names the bin player' do
-      expect(dbl_player1).to receive(:change_suffix).with(' the Bin')
+      expect(dbl_player1).to receive(:change_suffix).with('the Bin')
       described_class.new(dbl_player1, dbl_player2)
     end
     it 'names the skip player' do
-      expect(dbl_player2).to receive(:change_suffix).with(' the Skip')
+      expect(dbl_player2).to receive(:change_suffix).with('the Skip')
       described_class.new(dbl_player1, dbl_player2)
     end
   end

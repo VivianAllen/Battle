@@ -8,7 +8,7 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @players = [player_1, player_2]
-    @suffixes = [' the Bin', ' the Skip']
+    @suffixes = ['the Bin', 'the Skip']
     label_players
   end
 
