@@ -2,7 +2,7 @@ require_relative './player.rb'
 
 class Game
 
-  attr_reader :player_1, :player_2, :whos_turn
+  attr_reader :player_1, :player_2
 
   def initialize(player_1, player_2)
     @player_1 = player_1
@@ -21,7 +21,5 @@ class Game
   def whos_turn
     @players[0].name
   end
-
-  private
 
 end
