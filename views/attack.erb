@@ -1,6 +1,7 @@
 <h1>A BIN WILL FIGHT A SKIP!</h1>
-<h2> <%= @game.whos_turn.name %> <%= @game.whos_turn.suffix %> ATTACKS</h2>
-<p> <%= @game.player_1.name %> <%= @game.player_1.suffix %> HP: <%= @game.player_1.hp %>
-<%= @game.player_2.name %> <%= @game.player_2.suffix %> HP: <%= @game.player_2.hp %> </p>
-<form action='/attack' method='get'>
-<button type='submit'>ATTACK</button>
+<h2> <%= @game.whos_turn.full_name %> IS READY</h2>
+<p> <%= @game.player_1.full_name %> HP: <%= @game.player_1.hp %>
+<%= @game.player_2.full_name %> HP: <%= @game.player_2.hp %> </p>
+<form action='/results' method='get'>
+  <button type='submit'>ATTACK</button>
+</form>

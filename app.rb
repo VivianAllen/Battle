@@ -27,7 +27,12 @@ class Battle < Sinatra::Base
     @game = $game
     @game.attack
     erb :attack
+  end
+
+  get '/results' do
+    @game = $game
     @game.switch_player
+    erb :results
   end
 
   run! if app_file == $0
