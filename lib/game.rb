@@ -8,6 +8,8 @@ class Game
     @player_1 = player_1
     @player_2 = player_2
     @players = [player_1, player_2]
+    @suffixes = [' the Bin', ' the Skip']
+    label_players
   end
 
   def attack
@@ -20,6 +22,12 @@ class Game
 
   def whos_turn
     @players[0].name
+  end
+
+  private
+
+  def label_players
+    @players.each_with_index { |player, i| player.change_suffix(@suffixes[i]) }
   end
 
 end
