@@ -25,25 +25,20 @@ class Battle < Sinatra::Base
 
   get '/attack' do
     @game = $game
-    @game.attack
     erb :attack
   end
 
-  get '/check_route' do
+  get '/apply_attack_and_check_route' do
     @game = $game
-    results_route = @game.won? ? '/results_win' : '/results_continue'
+    @game.attack
+    @game.switch_player
+    results_route = @game.won? ? '/win' : '/attack'
     redirect results_route
   end
 
-  get '/results_continue' do
+  get '/win' do
     @game = $game
-    @game.switch_player
-    erb :results_continue
-  end
-
-  get '/results_win' do
-    @game = $game
-    erb :results_win
+    erb :win
   end
 
   run! if app_file == $0

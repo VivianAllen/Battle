@@ -8,6 +8,5 @@ end
 def attack_rounds(rounds)
   rounds.times do
     click_button 'ATTACK'
-    click_button 'PROCEED'
   end
 end
