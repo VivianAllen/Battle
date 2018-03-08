@@ -27,7 +27,7 @@ describe Game do
 
   context 'switching players' do
       it 'switches from player 1 to player 2' do
-      expect{game.switch_player}.to change{game.whos_turn}.\
+      expect{game.switch_player}.to change{game.whos_turn.name}.\
         from('Bill').to('Steve')
       end
   end

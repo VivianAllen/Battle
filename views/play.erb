@@ -1,6 +1,6 @@
 <h1>A BIN WILL FIGHT A SKIP!</h1>
-<h2> <%= @game.player_1.name %> the Bin vs. <%= @game.player_2.name %>  the Skip,
-FIIIIIIIGHT!!!' </h2>
+<h2> <%= @game.player_1.name %> <%= @game.player_1.suffix %> vs.
+<%= @game.player_2.name %>  <%= @game.player_2.suffix %>, FIIIIIIIGHT!!!' </h2>
 <p> <%= @game.player_1.name %> the Bin HP: <%= @game.player_1.hp %> :
 <%= @game.player_2.name %> the Skip HP: <%= @game.player_2.hp %> </p>
 <form action='/attack' method='get'>

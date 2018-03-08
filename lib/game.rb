@@ -13,7 +13,7 @@ class Game
   end
 
   def attack
-    @players[-1].receive_damage
+    whos_attacked.receive_damage
   end
 
   def switch_player
@@ -21,7 +21,11 @@ class Game
   end
 
   def whos_turn
-    @players[0].name
+    @players[0]
+  end
+
+  def whos_attacked
+    @players[-1]
   end
 
   private
