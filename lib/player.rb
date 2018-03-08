@@ -11,7 +11,8 @@ class Player
   end
 
   def receive_damage
-    @hp -= 10
+    @hp -= rand(1..100)
+    @hp = 0 if @hp < 0
   end
 
   def change_suffix(suffix)

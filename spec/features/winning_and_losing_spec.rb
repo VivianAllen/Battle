@@ -1,7 +1,13 @@
 feature 'win or lose game' do
-  scenario 'player 1 wins' do
+  scenario 'a player wins' do
     sign_in_and_play('Bill', 'Steve')
-    attack_rounds(19)
-    expect(page).to have_content 'Bill the Bin HAS WON!'
+    loopcount = 1
+    loop do
+      click_button 'ATTACK'
+      loopcount += 1
+      break if page.has_content?('HAS WON')
+      break if loopcount > 100
+    end
+    expect(page).to have_content 'HAS WON!'
   end
 end

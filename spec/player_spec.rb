@@ -32,8 +32,11 @@ describe Player do
   end
 
   context 'when attacked' do
-    it 'reduces hp by 10' do
-      expect{ player_1.receive_damage }.to change{ player_1.hp }.from(100).to(90)
+    it 'reduces hp by a random amount' do
+      rand_amnt = rand(1..100)
+      allow(player_1).to receive(:rand).and_return(rand_amnt)
+      expect{ player_1.receive_damage }.to change{ player_1.hp }.\
+      from(Player::DEFAULT_HP).to(Player::DEFAULT_HP - rand_amnt)
     end
   end
 
