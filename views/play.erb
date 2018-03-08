@@ -1,7 +1,8 @@
 <h1>A BIN WILL FIGHT A SKIP!</h1>
 <h2> <%= @player_1_name %> the Bin vs. <%= @player_2_name %>  the Skip,
 FIIIIIIIGHT!!!' </h2>
-<p> <%= @player_2_name %> HP: <%= @player_2_hp %> </p>
+<p> <%= @player_1_name %> the Bin HP: <%= @player_1_hp %>
+<%= @player_2_name %> the Skip HP: <%= @player_2_hp %> </p>
 <form action='/attack' method='get'>
   <button type='submit'>ATTACK</button>
 </form>
