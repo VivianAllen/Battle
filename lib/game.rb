@@ -29,7 +29,15 @@ class Game
   end
 
   def won?
-    @player_1.hp == 0 || @player_2.hp == 0
+    @player_1.hp.zero? || @player_2.hp.zero?
+  end
+
+  def self.create_instance(player_1, player_2)
+    @game_instance = Game.new(player_1, player_2)
+  end
+
+  def self.return_instance
+    @game_instance
   end
 
   private
