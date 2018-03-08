@@ -2,19 +2,23 @@ require 'game'
 
 describe Game do
 
-  subject(:game) {described_class.new(dbl_player, dbl_player)}
-  let(:dbl_player) { double :player }
+  subject(:game) {described_class.new(dbl_player1, dbl_player2)}
+  let(:dbl_player1) { double :player1, name: 'Bill' }
+  let(:dbl_player2) { double :player2, name: 'Steve' }
+
 
   context 'attacking players' do
-    it 'attacks player 1' do
-      expect(dbl_player).to receive(:receive_damage)
-      game.attack_player_1
+    it 'attacks player' do
+      expect(dbl_player2).to receive(:receive_damage)
+      game.attack
     end
-    it 'attacks player 2' do
-      expect(dbl_player).to receive(:receive_damage)
-      game.attack_player_2
-    end
+  end
 
+  context 'switching players' do
+      it 'switches from player 1 to player 2' do
+      expect{game.switch_player}.to change{game.whos_turn}.\
+        from('Bill').to('Steve')
+      end
   end
 
 end
