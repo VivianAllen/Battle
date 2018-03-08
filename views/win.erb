@@ -1,3 +1,11 @@
 <h1>A BIN HAS FOUGHT A SKIP!</h1>
+<img src=http://www.grumpyoldarchive.co.uk/dustbin.jpg
+  width = 150
+  height = 200
+</img>
+<img src=https://chorleyskiphire.co.uk/wp-content/uploads/2016/09/iStock_18642569_LARGE.jpg
+  width = 300
+  height = 200
+</img>
 <h1> <%= @game.whos_attacked.full_name %> HAS WON! </h1>
-<h2> I.E. <%= @game.whos_attacked.suffix.upcase %> WON </h2>
+<h2> <%= @game.whos_turn.suffix.upcase %> <%= @outcomes.sample %> </h2>

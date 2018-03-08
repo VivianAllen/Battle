@@ -29,10 +29,17 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
+    @effects = ['WAS PUNISHED',
+      'WAS TWATTED',
+      'IS REELING',
+      "CAN'T TAKE IT",
+    'GOT HAMMERED',
+  'TOOK A BEATING']
     erb :attack
   end
 
   get '/apply_attack_and_check_route' do
+
     @game.attack
     @game.switch_player
     results_route = @game.won? ? '/win' : '/attack'
@@ -40,6 +47,12 @@ class Battle < Sinatra::Base
   end
 
   get '/win' do
+    @outcomes = ['GOT KICKED TO THE KERB',
+      'IS TRASHED',
+      'WAS WASTED',
+      'IS LITERALLY A BUNCH OF RUBBISH',
+    'IS UNWANTED AND BROKEN CRAP',
+  'IS A BAD IDIOT']
     erb :win
   end
 
