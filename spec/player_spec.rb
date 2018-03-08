@@ -2,8 +2,9 @@ require 'player'
 
 describe Player do
 
-  subject(:player_1) { described_class.new('Dave')}
+  subject(:player_1) { described_class.new('Dave', 100, nil, dbl_damage_calc) }
   subject(:player_2) { described_class.new('Steve')}
+  let(:dbl_damage_calc) { double :damage_calc, damage: 10 }
 
   describe '#name' do
     it 'returns the players name' do
@@ -32,11 +33,9 @@ describe Player do
   end
 
   context 'when attacked' do
-    it 'reduces hp by a random amount' do
-      rand_amnt = rand(1..100)
-      allow(player_1).to receive(:rand).and_return(rand_amnt)
-      expect{ player_1.receive_damage }.to change{ player_1.hp }.\
-      from(Player::DEFAULT_HP).to(Player::DEFAULT_HP - rand_amnt)
+    it 'ask damage calculator for a damage amount' do
+      expect(dbl_damage_calc).to receive(:damage)
+      player_1.receive_damage
     end
   end
 

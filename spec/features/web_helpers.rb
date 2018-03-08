@@ -10,10 +10,3 @@ def attack_rounds(rounds)
     click_button 'ATTACK'
   end
 end
-
-def attack_until_won
-  loop do
-    click_button 'ATTACK'
-    break if page.has_content?('HAS WON')  
-  end
-end

@@ -4,14 +4,15 @@ class Player
 
   attr_reader :name, :hp, :suffix
 
-  def initialize(name, hp=DEFAULT_HP, suffix=nil)
+  def initialize(name, hp=DEFAULT_HP, suffix=nil, damage_calc = DamageCalc.new)
     @name = name
     @hp = hp
     @suffix = suffix
+    @damage_calc = damage_calc
   end
 
   def receive_damage
-    @hp -= rand(1..100)
+    @hp -= @damage_calc.damage
     @hp = 0 if @hp < 0
   end
 
