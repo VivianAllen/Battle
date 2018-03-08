@@ -28,6 +28,10 @@ class Game
     @players[-1]
   end
 
+  def won?
+    @player_1.hp == 0 || @player_2.hp == 0
+  end
+
   private
 
   def label_players

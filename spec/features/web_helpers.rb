@@ -4,3 +4,10 @@ def sign_in_and_play(p1name, p2name)
   fill_in :player_2_name, with: p2name
   click_button 'Submit'
 end
+
+def attack_rounds(rounds)
+  rounds.times do
+    click_button 'ATTACK'
+    click_button 'PROCEED'
+  end
+end
