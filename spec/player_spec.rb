@@ -18,6 +18,13 @@ describe Player do
     end
   end
 
+  describe '#full_name' do
+    it 'returns the players full name' do
+      expect{ player_1.change_suffix('the Bin') }.to change{ player_1.full_name }\
+      .from('Dave ').to('Dave the Bin')
+    end
+  end
+
   describe '#hp' do
     it 'returns the players hp' do
       expect(player_1.hp).to eq 100

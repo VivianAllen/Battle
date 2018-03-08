@@ -18,4 +18,8 @@ class Player
     @suffix = suffix
   end
 
+  def full_name
+    "#{@name} #{@suffix}"
+  end
+
 end
