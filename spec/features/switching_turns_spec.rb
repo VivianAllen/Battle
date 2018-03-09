@@ -8,6 +8,6 @@ feature 'Swith Turns' do
     sign_in_and_play('Dave', 'Steve')
     click_button 'ATTACK'
     click_button 'ATTACK'
-    expect(page).to have_content ('Dave the Bin IS PUNISHED')
+    expect(page).to have_content ("Dave the Bin's turn!")
   end
 end

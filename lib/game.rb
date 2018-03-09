@@ -4,11 +4,13 @@ class Game
 
   attr_reader :player_1, :player_2
 
-  def initialize(player_1, player_2, damage_calc = DamageCalc.new)
+  def initialize(player_1, player_2,
+    damage_calc = DamageCalc.new,
+    suffixes = ['the Bin', 'the Skip'])
     @player_1 = player_1
     @player_2 = player_2
     @players = [player_1, player_2]
-    @suffixes = ['the Bin', 'the Skip']
+    @suffixes = suffixes
     label_players
   end
 

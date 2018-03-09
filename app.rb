@@ -29,12 +29,7 @@ class Battle < Sinatra::Base
   end
 
   get '/attack' do
-    @effects = ['WAS PUNISHED',
-      'WAS TWATTED',
-      'IS REELING',
-      "CAN'T TAKE IT",
-    'GOT HAMMERED',
-  'TOOK A BEATING']
+    @effects = []
     erb :attack
   end
 
@@ -47,12 +42,7 @@ class Battle < Sinatra::Base
   end
 
   get '/win' do
-    @outcomes = ['GOT KICKED TO THE KERB',
-      'IS TRASHED',
-      'WAS WASTED',
-      'IS LITERALLY A BUNCH OF RUBBISH',
-    'IS UNWANTED AND BROKEN CRAP',
-  'IS A BAD IDIOT']
+    @outcomes = []
     erb :win
   end
 
